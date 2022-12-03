@@ -285,7 +285,7 @@ export const products = [
     ],
   },
   {
-    id: 19,
+    id: 20,
     title: "VANS Classic Slip-On Shoes",
     subtitle:
       "Vans Classic Slip-On Shoes. First introduced in 1977, the Vans #98-now known as the Classic Slip-On—instantly became an icon in Southern California. Fast forward to today, and the Classic Slip-On is known worldwide for its comfortable silhouette, easy wearability, and beloved design. Featuring the iconic Vans checkerboard print, the Classic Slip-On is an everyday essential with true “Off The Wall” style. This slip-on shoe also includes low profile canvas uppers, supportive padded collars, elastic side accents, and signature rubber waffle outsoles. Imported.",
