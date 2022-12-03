@@ -18,6 +18,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
+      "@/mocks/*": ["mocks/*"],
+      "@/services/*": ["services/*"],
+      "@/types/*": ["types/*"],
       "@/styles/*": ["styles/*"]
     }
   },
