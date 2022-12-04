@@ -1,7 +1,5 @@
 export const displayPrice = (num = 0) => {
   let number: string | number = num.toString();
-  // number = number.slice(0, number.length - 2);
-  // number = Number(number);
   number =
     number.toString().slice(0, number.toString().length - 2) +
     "." +
