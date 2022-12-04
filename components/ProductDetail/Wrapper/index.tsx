@@ -6,9 +6,11 @@ export default function DetailWrapper({
   loading,
   image,
   description,
+  action,
 }: {
   loading: boolean;
   image: React.ReactNode;
+  action: React.ReactNode;
   description: React.ReactNode;
 }) {
   return (
@@ -40,14 +42,7 @@ export default function DetailWrapper({
               {description}
 
               <Box mt={20}>
-                <Box
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                  mb={20}
-                ></Box>
+                <Box mb={20}>{action}</Box>
               </Box>
             </Box>
           </Box>

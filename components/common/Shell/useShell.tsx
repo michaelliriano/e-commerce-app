@@ -16,7 +16,9 @@ export default function useShell() {
 
   const calculateTotal = useCallback(() => {
     let amount = 0;
-    CART_STORE.forEach((product: Product) => (amount = amount + product.price));
+    CART_STORE.forEach(
+      (product: Product) => (amount = amount + product.price * product.inCart)
+    );
     return amount;
   }, [CART_STORE]);
 

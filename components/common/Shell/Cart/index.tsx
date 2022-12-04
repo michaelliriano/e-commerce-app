@@ -4,6 +4,9 @@ import { useDispatch } from "react-redux";
 import { closeCart } from "../../../../features/cart/cartSlice";
 import useShell from "../useShell";
 import useCart from "../../../../hooks/useCart";
+import { displayPrice } from "../../../../utils";
+import ProductCard from "../../ProductCard";
+import Action from "@/components/ProductDetail/Action";
 
 export default function Cart() {
   const { calculateTotal, totalCartLength, CART_STORE, drawers } = useShell();
@@ -34,9 +37,22 @@ export default function Cart() {
           </Box>
           <Box>
             <Title size={20}> Subtotal</Title>
-            <Text size={20}> {calculateTotal()}</Text>
+            <Text size={20}> {displayPrice(calculateTotal())}</Text>
           </Box>
         </Box>
+
+        <Button
+          disabled={CART_STORE.length < 1}
+          mb={20}
+          style={{
+            height: 45,
+            fontSize: 18,
+          }}
+          fullWidth
+          color="dark"
+        >
+          Checkout
+        </Button>
 
         {CART_STORE.length < 1 && <Text align="center">Nothing in cart.</Text>}
 
@@ -45,7 +61,11 @@ export default function Cart() {
           type="scroll"
           className={classes.scollView}
         >
-          {/* <Text>Products go here</Text> */}
+          {CART_STORE.map((product) => (
+            <ProductCard key={product.id} product={product} horizontal>
+              <Action product={product} withQuantity />
+            </ProductCard>
+          ))}
         </ScrollArea>
       </Drawer>
     </>

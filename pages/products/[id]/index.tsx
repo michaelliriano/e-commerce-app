@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Product } from "../../../types/product";
 import axios from "axios";
 import ProductDetail from "@/components/ProductDetail";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
 
 export default function ProductIdPage() {
   const router = useRouter();
@@ -13,7 +15,7 @@ export default function ProductIdPage() {
   useEffect(() => {
     setLoading(true);
     axios.get("/api/v1/products/" + id).then(({ data }) => {
-      setProduct(data.product);
+      setProduct({ ...data.product, inCart: 1 });
       setLoading(false);
     });
   }, [id]);

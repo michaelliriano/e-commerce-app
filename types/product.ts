@@ -6,4 +6,6 @@ export type Product = {
   price: number;
   rating: number;
   images: string[];
+  quantity: number;
+  inCart: number;
 };
