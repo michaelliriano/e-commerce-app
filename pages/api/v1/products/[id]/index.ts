@@ -1,6 +1,10 @@
 import { ProductService } from "../../../../../services/product";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async (req, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
     const service = new ProductService();
     const product = await service.fetchById(Number(req.query.id));
@@ -9,4 +13,4 @@ export default async (req, res) => {
   } catch (error) {
     res.status(500).json({ error });
   }
-};
+}

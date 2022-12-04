@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/common/ProductCard";
 import { products } from "../../mocks/products";
 
 describe("ProductCard.tsx", () => {

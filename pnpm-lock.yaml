@@ -24,12 +24,14 @@ specifiers:
   react-redux: ^8.0.5
   redux: ^4.2.0
   typescript: 4.6.4
+  yet-another-react-lightbox: ^2.2.2
 
 dependencies:
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
   node-mocks-http: 1.12.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  yet-another-react-lightbox: 2.2.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@emotion/react': 11.10.5_ulhmhxukhxjgxaybrsjlob7ffu
@@ -5262,6 +5264,17 @@ packages:
       y18n: 5.0.8
       yargs-parser: 21.1.1
     dev: true
+
+  /yet-another-react-lightbox/2.2.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-LkZ5FcHaWy3S8MN5ART84gkRAE2w0PfNzGKPR3zM6uhOJSFCGO2+TgLyHkhx3KmR/3ZbTbA0ko3HWvs5aU537A==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}

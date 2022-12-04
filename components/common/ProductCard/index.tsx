@@ -1,5 +1,5 @@
 import { Card, Box, Title, Text } from "@mantine/core";
-import { shorten, displayPrice } from "../../utils";
+import { shorten, displayPrice } from "../../../utils";
 import { ProductCardProps } from "./types";
 
 export default function ProductCard({

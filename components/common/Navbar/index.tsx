@@ -48,7 +48,7 @@ export default function Navbar({ drawer }: NavBarProps) {
   }, [CART_STORE, totalCartLength]);
 
   return (
-    <Header height={HEADER_HEIGHT} mb={-60} className={classes.root}>
+    <Header data-testid="navbar" height={HEADER_HEIGHT} mb={-60} className={classes.root}>
       <Container className={classes.header}>
         <Title onClick={() => router.push("/")} size={24}>
           E-Commerce

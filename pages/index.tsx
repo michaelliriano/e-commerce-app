@@ -1,23 +1,15 @@
 import Head from "next/head";
-import axios from "axios";
-import { Text } from "@mantine/core";
-import { useEffect, useState } from "react";
-import { Product } from "../types/product";
-import ProductCard from "@/components/ProductCard";
+import { Text, Box } from "@mantine/core";
+import ProductCard from "@/components/common/ProductCard";
 import ProductWrapper from "@/components/ProductWrapper";
+import useHome from "../hooks/useHome";
+import Loader from "@/components/common/Loader";
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    axios.get("/api/v1/products").then(({ data }) => {
-      setProducts(data.products);
-    });
-    return () => {};
-  }, []);
+  const { products, redirect, loading } = useHome();
 
   return (
-    <div>
+    <Box>
       <Head>
         <title>E-Commerce App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -25,11 +17,19 @@ export default function Home() {
       <main>
         <Text mb={10}>Welcome to the ecom app</Text>
       </main>
-      <ProductWrapper>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </ProductWrapper>
-    </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ProductWrapper>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onClick={() => redirect(product.id)}
+            />
+          ))}
+        </ProductWrapper>
+      )}
+    </Box>
   );
 }
