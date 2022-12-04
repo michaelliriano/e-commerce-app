@@ -8,12 +8,15 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "13.0.6",
     "node-mocks-http": "^1.12.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "yet-another-react-lightbox": "^2.2.2"
   },
+  "cacheDirectories": [
+    ".next/cache"
+  ],
   "devDependencies": {
     "@emotion/react": "^11.10.5",
     "@mantine/core": "^5.7.0",
