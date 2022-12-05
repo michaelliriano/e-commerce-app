@@ -7,7 +7,7 @@ describe("ProductCard.tsx", () => {
   const testId = "product-card";
 
   beforeEach(() => {
-    render(<ProductCard product={mockProduct} />);
+    render(<ProductCard product={{ ...mockProduct, inCart: 1 }} />);
   });
 
   it("renders a image", async () => {
