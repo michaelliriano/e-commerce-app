@@ -1,28 +1,36 @@
 # Next.js + Jest
 
-This example shows how to configure Jest to work with Next.js.
+This project uses [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
 
 This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
 
-## How to Use
+## Mantine UI
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+This project uses [Mantine](https://mantine.dev/) for a UI Library.
 
-In your terminal, run the following command:
+### Redux & Redux Toolkit 
 
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
+This project uses [Redux Tool](https://redux-toolkit.js.org/introduction/getting-started) for managing state.
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+#### Run Development Server
 
 ```bash
-pnpm create next-app --example with-jest with-jest-app
+npm run dev
 ```
 
-## Run Jest Tests
+#### Build Application
+
+```bash
+npm run build
+```
+
+#### Run Built Application
+
+```bash
+npm run start
+```
+
+#### Run Jest Tests
 
 ```bash
 npm test
