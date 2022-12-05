@@ -4,6 +4,7 @@ import {
   PreloadedState,
 } from "@reduxjs/toolkit";
 import cartSlice from "../features/cart/cartSlice";
+import toastSlice from "../features/toast/toastSlice";
 
 //MIDDLEWARE
 const localStorageMiddleware = ({ getState }: any) => {
@@ -26,6 +27,7 @@ const reHydrateStore = () => {
 export const store = configureStore({
   reducer: {
     cart: cartSlice,
+    toast: toastSlice,
   },
   preloadedState: reHydrateStore(),
   middleware: (getDefaultMiddleware) =>

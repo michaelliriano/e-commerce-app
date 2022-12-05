@@ -9,7 +9,7 @@ export default function useShell() {
   };
 
   const CART_STORE = useSelector((state: RootState) => state.cart.cart);
-
+  const toast = useSelector((state: RootState) => state.toast);
   const totalCartLength = useCallback(() => {
     return CART_STORE.length;
   }, [CART_STORE]);
@@ -27,5 +27,6 @@ export default function useShell() {
     totalCartLength,
     CART_STORE,
     drawers,
+    toast,
   };
 }
