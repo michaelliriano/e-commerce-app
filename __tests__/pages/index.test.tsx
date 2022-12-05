@@ -11,7 +11,7 @@ describe("Home", () => {
   it("renders a heading", () => {
     renderWithProviders(<Home />);
 
-    const heading = screen.getByText("Welcome to the ecom app");
+    const heading = screen.getByText("Welcome!");
     expect(heading).toBeInTheDocument();
   });
 });

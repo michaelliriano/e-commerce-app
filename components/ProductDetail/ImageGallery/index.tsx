@@ -1,6 +1,8 @@
 import { Box, Card, Image } from "@mantine/core";
 import React from "react";
-import Lightbox from "yet-another-react-lightbox";
+import dynamic from "next/dynamic";
+
+const Lightbox = dynamic(import("yet-another-react-lightbox"), { ssr: false }); // Async API cannot be server-side rendered
 import useLightBox from "../../../hooks/useLightBox";
 
 export default function ImageGallery({ images }: { images?: string[] }) {

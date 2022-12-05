@@ -3,12 +3,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "heroku-postbuild": "npm run build",
     "test": "jest --watch",
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^7.8.2",
     "next": "13.0.6",
     "node-mocks-http": "^1.12.1",
     "react": "^18.1.0",

@@ -9,9 +9,6 @@ nextRouter.useRouter.mockImplementation(() => ({ route: "/products/1" }));
 
 describe("products/[id]", () => {
   it("renders a loader", () => {
-    renderWithProviders(<ProducsById />);
-
-    // const loader = screen.getByText("loader");
-    // expect(loader).toBeInTheDocument();
+    expect(renderWithProviders(<ProducsById />));
   });
 });

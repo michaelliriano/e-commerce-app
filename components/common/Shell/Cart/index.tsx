@@ -7,11 +7,15 @@ import useCart from "../../../../hooks/useCart";
 import { displayPrice } from "../../../../utils";
 import ProductCard from "../../ProductCard";
 import Action from "@/components/ProductDetail/Action";
+import usePaypal from "../../../../hooks/usePaypal";
+import useHome from "../../../../hooks/useHome";
 
 export default function Cart() {
   const { calculateTotal, totalCartLength, CART_STORE, drawers } = useShell();
   let dispatch = useDispatch();
   const { classes } = useCart();
+  const PayPalButtons = usePaypal();
+  const { redirect } = useHome();
 
   return (
     <>
@@ -40,19 +44,7 @@ export default function Cart() {
             <Text size={20}> {displayPrice(calculateTotal())}</Text>
           </Box>
         </Box>
-
-        <Button
-          disabled={CART_STORE.length < 1}
-          mb={20}
-          style={{
-            height: 45,
-            fontSize: 18,
-          }}
-          fullWidth
-          color="dark"
-        >
-          Checkout
-        </Button>
+        {PayPalButtons}
 
         {CART_STORE.length < 1 && <Text align="center">Nothing in cart.</Text>}
 
@@ -62,7 +54,12 @@ export default function Cart() {
           className={classes.scollView}
         >
           {CART_STORE.map((product) => (
-            <ProductCard key={product.id} product={product} horizontal>
+            <ProductCard
+              key={product.id}
+              product={product}
+              horizontal
+              onClick={() => redirect(product.id)}
+            >
               <Action product={product} withQuantity />
             </ProductCard>
           ))}

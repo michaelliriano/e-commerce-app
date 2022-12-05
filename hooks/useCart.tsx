@@ -11,7 +11,9 @@ export default function useCart() {
 
   const total = useCallback(() => {
     let total = 0;
-
+    for (let i = 0; i < CART_STORE.length; i++) {
+      total = total + CART_STORE[i].price * CART_STORE[i].inCart;
+    }
     return total;
   }, [CART_STORE]);
 

@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Text mb={10}>Welcome to the ecom app</Text>
+        <Text mb={10}>Welcome!</Text>
       </main>
       {loading ? (
         <Loader />

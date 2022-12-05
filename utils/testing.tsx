@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 
 import type { AppStore, RootState } from "../app/store";
 import cartReducer from "../features/cart/cartSlice";
+import toastReducer from "../features/toast/toastSlice";
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -26,9 +27,17 @@ export function renderWithProviders(
         cart: [],
         open: false,
       },
+      toast: {
+        title: "",
+        message: "",
+        color: "teal",
+      },
     },
     // Automatically create a store instance if no store was passed in
-    store = configureStore({ reducer: { cart: cartReducer }, preloadedState }),
+    store = configureStore({
+      reducer: { cart: cartReducer, toast: toastReducer },
+      preloadedState,
+    }),
     ...renderOptions
   }: ExtendedRenderOptions = {}
 ) {
